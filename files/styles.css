@@ -2,8 +2,8 @@
     /* --color1: rgb(11, 0, 74);
     --color1: rgb(40, 26, 111);
     --color1: ss; */
-    --color1: #004E64;
-    --color1t: #004e6478;
+    --color1: #003544;
+    --color1t: #00354478;
     --color2t: #0083a878;
 }
 
@@ -118,10 +118,10 @@ h1 {
 }
 
 .menu-body {
-    width: 70%;
+    width: 70%;  /*just for animation effect */
     height: 0px;
     padding: 0;
-    margin: auto;
+    margin: auto; 
     overflow: hidden;
 
     border-radius: 20px;
@@ -135,7 +135,7 @@ h1 {
 }
 
 .menu-body.show {
-    width: 90%;
+    width: 100%;
     opacity: 1;
     transition: all 0.3s ease;
 }
@@ -151,13 +151,20 @@ h1 {
 
 #projects-body.show {
     height: 700px;
+
 }
 
 #resume-body.show {
     height: 1300px;
 }
 
-
+#projects-list{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* display:block; */
+    
+}
 .project {
     border-radius: 20px;
     /* background-color: bisque; */
@@ -170,7 +177,16 @@ h1 {
     vertical-align: middle;
     display:table;
     border: 1px solid black;
+    margin:auto;
     margin-top: 30px;
+}
+
+.project.hide {
+    margin-left:0;
+    float:left;
+    clear: left;
+    width: 5%
+    /* TODO: fix size (text) through js */
 }
 
 .flex {
