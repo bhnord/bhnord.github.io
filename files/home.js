@@ -4,6 +4,9 @@ const menuBodies = document.querySelectorAll('.menu-body');
 const contactNavBtn = document.querySelector('#contact-btn');
 const contactBtns = document.querySelectorAll('.card');
 const contactText = document.querySelector('#contact-text');
+
+
+
 let currMenu = null;
 let currMenuBody = null;
 
@@ -13,6 +16,7 @@ contactNavBtn.addEventListener('click', () =>{
 
 });
 
+// nav bar functionality
 buttons.forEach((button, index) => {
     const menuBody = menuBodies[index];
     button.addEventListener('click', ()=>{
@@ -41,6 +45,60 @@ buttons.forEach((button, index) => {
             currMenuBody.classList.remove('show');
             currMenuBody = null;
         }
+
+
+        //reset projects
     });
 
+});
+
+const projects = document.querySelectorAll('.project');
+let currProj = null;
+
+
+
+//add text change when unfocused
+
+//project div functionality
+projects.forEach((project, index) => {
+    //onclick, switch focus
+    console.log("hello")
+
+    project.addEventListener('click', ()=>{
+        window.scrollTo({top:0, behavior: 'smooth'});
+        
+        
+        if(currProj ==null){
+            //first focus --> everything hide, one expand
+            currProj = project;
+            projects.forEach((p, i)=>{
+                if(p != project){
+                    //hide all not clicked
+                    p.classList.add('hide');
+                }
+            });
+            project.classList.add('expand');
+        }
+        else if(project == currProj){
+            //reset all
+            projects.forEach((p, i)=>{
+                p.classList.remove('expand');
+                p.classList.remove('hide');
+            });
+            currProj = null;
+        } else {
+            //new focus
+            //everything should be hidden besides curr
+            currProj.classList.remove('expand');
+            currProj.classList.add('hide');
+            project.classList.remove('hide');
+            project.classList.add('expand');
+            currProj = project;
+
+        }
+        
+
+
+        
+    });
 });

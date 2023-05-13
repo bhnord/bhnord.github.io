@@ -18,7 +18,6 @@ span {
 	font-weight: 400;
 	color: white;
 	text-transform: uppercase;
-
 }
 
 header {
@@ -184,17 +183,11 @@ h1 {
 	border: 1px solid black;
 	margin:auto;
 	/*margin-top: 30px;*/
+	transition: all 0.4s ease;
+	/* user-select: none; */
 }
 
-#p2 {
-	top:100px;
-}
-#p3 {
-	top:200px;
-}
-#p4 {
-	top:300px;
-}
+
 
 .project.hide {
 	left:0;
@@ -206,8 +199,18 @@ h1 {
 	max-width: 90vw;
 	width: 85vw;
 	height: 700px;
+	top: 0px;
 }
 
+.p2 {
+	top:100px;
+}
+.p3 {
+	top:200px;
+}
+.p4 {
+	top:300px;
+}
 .flex {
 	flex: 1 1 auto;
 	min-height: 0;
@@ -253,7 +256,7 @@ h1 {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	background-image: url('./waves.svg');
+	/* background-image: url('./waves.svg'); */
 
 	position: fixed;
 	bottom: 0;
