@@ -3,8 +3,13 @@
 	--color1: rgb(40, 26, 111);
 	--color1: ss; */
 	--color1: #003544;
+	--color1: #c2f2ff;
 	--color1t: #00354478;
-	--color2t: #0083a878;
+	--color1t: #c2f2ff8a;
+	/* --color2t: #0083a878; */
+	--color2t: #0fcef378;
+	--color2tt: #0fcdf323;
+	--color2t: #00518fbd;
 }
 
 h1,
@@ -14,14 +19,17 @@ h4,
 a,
 p,
 span {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Courier New', Courier, monospace;
+	/* font-family: 'Rubik', sans-serif; */
 	font-weight: 400;
-	color: white;
-	text-transform: uppercase;
+	color: black;
+	/* text-transform: uppercase; */
 }
 
+	
 header {
 
+	padding-left: 45px;
 	background-color: var(--color1t);
 	min-height: 30px;
 	justify-content: left;
@@ -64,6 +72,7 @@ button:hover {
 
 /* fill up hwole page and how to get scroll */
 body {
+	position:relative;
 	background-color: var(--color1);
 	padding: 0;
 	font-family: 'Courier New', Courier, monospace;
@@ -72,6 +81,7 @@ body {
 }
 
 #contact-info {
+
 	text-align: center;
 	bottom: 2px;
 	padding: 0;
@@ -80,12 +90,13 @@ body {
 }
 
 #contact-text {
+	color:white;
+	font-family: 'Rubik', sans-serif;
 	transition: all 0.5s ease;
 }
 
 
 h1 {
-	color: white;
 	font-size: 30px;
 }
 
@@ -134,6 +145,7 @@ h1 {
 }
 
 .menu-body.show {
+	padding-top: 60px;
 	width: 100%;
 	opacity: 1;
 	transition: all 0.3s ease;
@@ -143,6 +155,10 @@ h1 {
 	text-transform: none;
 	font-size: 21px;
 }
+
+/* #about-body {
+	flex-flow: row;
+} */
 
 #about-body.show {
 	height: 700px;
@@ -166,6 +182,13 @@ h1 {
 	/* display:block; */
 
 }
+
+#name-intro {
+	font-weight: 400;
+	color: black;
+	margin-bottom: 50px;
+	font-size: 45px;
+}
 .project {
 	position: absolute;
 	border-radius: 20px;
@@ -180,11 +203,16 @@ h1 {
 	text-align: center;
 	vertical-align: middle;
 	display:table;
-	border: 1px solid black;
+	/* border: 1px solid black; */
+	/* color = #0fcef378   */
 	margin:auto;
 	/*margin-top: 30px;*/
-	transition: all 0.4s ease;
+	transition: all 0.7s ease;
 	/* user-select: none; */
+
+
+
+	color: white;
 }
 
 
@@ -211,9 +239,17 @@ h1 {
 .p4 {
 	top:300px;
 }
-.flex {
+
+/* .flex {
 	flex: 1 1 auto;
-	min-height: 0;
+	min-width: 0;
+	max-width: 25%;
+} */
+
+.flex {
+	padding-top: 70px;
+	max-height: 250px;
+	height: 20vw;
 }
 
 .menu-body img {
@@ -233,7 +269,7 @@ h1 {
 }
 
 .menu-text {
-	margin-top: 50px;
+	margin-top: 20px;
 	margin-bottom: 40px;
 	background-color: transparent;
 	border-radius: 20px;
@@ -250,18 +286,21 @@ h1 {
 
 .fixed-image {
 
+	/* visibility: hidden; */
 	/* aspect-ratio: 960/450; */
 
 
+	background-image: linear-gradient(to top, rgba(248, 168, 77, 0.45), rgba(248, 168, 77,0));
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
+	/* background-size: cover; */
 	/* background-image: url('./waves.svg'); */
 
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
+	/* height: 40%; */
 	z-index: -1;
 	/* height: 80%;
 	z-index: -1;
@@ -272,4 +311,21 @@ h1 {
 
 ::-webkit-scrollbar {
 	width: 0px;
+}
+
+@media screen and (max-width: 700px){
+	header {
+		width: 90vw;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		padding: 0px;
+    left: 0;
+    right: 0;
+	}
+	.head-btn {
+		font-size:3vw;
+		margin: 20px, auto, auto, auto;
+		padding: 0px;
+	}
 }

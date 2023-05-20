@@ -7,11 +7,9 @@ const contactText = document.querySelector('#contact-text');
 
 
 
-let currMenu = null;
-let currMenuBody = null;
+let currMenuBody = document.querySelector('.show');
 
 contactNavBtn.addEventListener('click', () =>{
-    console.log('clicked');
     window.scrollTo({top: document.body.scrollHeight, behavior:'smooth'});
 
 });
@@ -62,7 +60,6 @@ let currProj = null;
 //project div functionality
 projects.forEach((project, index) => {
     //onclick, switch focus
-    console.log("hello")
 
     project.addEventListener('click', ()=>{
         window.scrollTo({top:0, behavior: 'smooth'});
