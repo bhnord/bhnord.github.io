@@ -2,10 +2,11 @@
 	/* --color1: rgb(11, 0, 74);
 	--color1: rgb(40, 26, 111);
 	--color1: ss; */
-	--color1: #003544;
+	/* --color1: #003544; */
 	--color1: #c2f2ff;
-	--color1t: #00354478;
+	/* --color1t: #00354478; */
 	--color1t: #c2f2ff8a;
+	--color1t: #c2f2ffed;
 	/* --color2t: #0083a878; */
 	--color2t: #0fcef378;
 	--color2tt: #0fcdf323;
@@ -16,16 +17,27 @@ h1,
 h2,
 h3,
 h4,
-a,
+/* a, */
 p,
 span {
+	/* TODO: Change Font */
 	font-family: 'Courier New', Courier, monospace;
 	/* font-family: 'Rubik', sans-serif; */
-	font-weight: 400;
+	font-weight: 500;
 	color: black;
 	/* text-transform: uppercase; */
 }
 
+a {
+	/* color: red;
+	color: #1c49c2;
+	color: #007cba;
+	color: black; */
+	font-weight: 700;
+	text-decoration: none;
+
+
+}
 	
 header {
 
@@ -90,8 +102,11 @@ body {
 }
 
 #contact-text {
+	margin: 0;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 700;
 	color:white;
-	font-family: 'Rubik', sans-serif;
+	/* font-family: 'Rubik', sans-serif; */
 	transition: all 0.5s ease;
 }
 
@@ -112,7 +127,7 @@ h1 {
 }
 
 .cards {
-	margin-top: 50px;
+	margin-top: 20px;
 	display: flex;
 	justify-content: center;
 	transition: all 0.5s ease;
@@ -166,11 +181,12 @@ h1 {
 
 #projects-body.show {
 	height: 1300px;
-
+	padding-bottom: 250px;
 }
 
 #resume-body.show {
 	height: 1300px;
+	padding-bottom: 150px;
 }
 
 #projects-list{
@@ -221,7 +237,6 @@ h1 {
 	left:0;
 	width: 55px;
 	transform: translate(0%, 0);
-	/* TODO: fix size (text) through js */
 }
 .project.expand {
 	max-width: 90vw;
@@ -247,7 +262,7 @@ h1 {
 } */
 
 .flex {
-	padding-top: 70px;
+	padding-top: 30px;
 	max-height: 250px;
 	height: 20vw;
 }
