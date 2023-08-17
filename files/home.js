@@ -75,6 +75,7 @@ projects.forEach((project, index) => {
                 }
             });
             project.classList.add('expand');
+            project.querySelectorAll(".project-slideshow")[0].style.display="block";
         }
         else if(project == currProj){
             //reset all
@@ -93,9 +94,28 @@ projects.forEach((project, index) => {
             currProj = project;
 
         }
-        
-
-
-        
     });
 });
+
+
+let slideIndex = 0;
+currentSlide(0);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let slides = document.querySelectorAll(".slide");
+    slideIndex %= slides.length;
+
+    slides.forEach((slide, index) => {
+        slide.style.display="none";
+    });
+    slides[slideIndex].style.display="block";
+
+}

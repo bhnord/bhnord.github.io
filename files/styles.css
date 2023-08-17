@@ -226,6 +226,7 @@ h1 {
 }
 
 .project-slideshow {
+	width: 80%;
 	position: relative;
 	margin: auto;
 }
@@ -235,9 +236,10 @@ h1 {
 }
 
 .slide {
-	/* display: none; */
+	display: none;
 	position: relative;	
 	width: 100%;
+	margin: auto;
 }
 
 .numbering {
@@ -246,6 +248,31 @@ h1 {
 	top: 0;
 }
 
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	transition: 0.6s ease;
+	user-select: none;	
+	pointer-events:all;
+}
+
+.next {
+	right: 0;
+}
+
+.prev {
+	left: 0;
+}
+
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+
+}
 
 .project.hide {
 	left:0;
