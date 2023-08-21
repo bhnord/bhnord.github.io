@@ -75,13 +75,19 @@ projects.forEach((project, index) => {
                 }
             });
             project.classList.add('expand');
-            project.querySelectorAll(".project-slideshow")[0].style.display="block";
+            setTimeout(() => {
+                let slideshow = project.querySelector(".project-slideshow");
+                showSlides(0, slideshow);
+                slideshow.style.display = "flex";
+            }, 700);
         }
         else if(project == currProj){
             //reset all
             projects.forEach((p, i)=>{
+                p.querySelector(".project-slideshow").style.display = "none";
                 p.classList.remove('expand');
                 p.classList.remove('hide');
+                
             });
             currProj = null;
         } else {
@@ -92,30 +98,50 @@ projects.forEach((project, index) => {
             project.classList.remove('hide');
             project.classList.add('expand');
             currProj = project;
-
+            projects.forEach((p, i)=>{
+                p.querySelector(".project-slideshow").style.display = "none";
+                
+            });
+            setTimeout(() => {
+                let slideshow = project.querySelector(".project-slideshow");
+                showSlides(0, slideshow);
+                slideshow.style.display = "flex";
+            }, 700);
         }
     });
 });
 
 
-let slideIndex = 0;
-currentSlide(0);
+const slideMap = new Map();
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
+document.querySelectorAll("a.next").forEach(button => {
+   const parent = button.parentElement;
+   console.log(parent);
+   slideMap.set(parent, 0);
+   button.addEventListener("click", event => {
+    event.stopPropagation();
+    showSlides(slideMap.get(parent)+1, parent);
+   })
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
+})
 
-function showSlides(n) {
-    let slides = document.querySelectorAll(".slide");
-    slideIndex %= slides.length;
+document.querySelectorAll("a.prev").forEach(button => {
+   const parent = button.parentElement;
+   button.addEventListener("click", event => {
+    event.stopPropagation();
+    showSlides(slideMap.get(parent)-1, parent);
+   })
+
+})
+
+function showSlides(n, slideshow) {
+    let slides = slideshow.querySelectorAll(".slide");
+    let slideIndex = (slides.length+n) % slides.length;
 
     slides.forEach((slide, index) => {
         slide.style.display="none";
     });
-    slides[slideIndex].style.display="block";
+    slides[slideIndex].style.display="flex";
 
+    slideMap.set(slideshow, slideIndex);
 }
