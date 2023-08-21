@@ -5,40 +5,38 @@ const contactNavBtn = document.querySelector('#contact-btn');
 const contactBtns = document.querySelectorAll('.card');
 const contactText = document.querySelector('#contact-text');
 
-
-
 let currMenuBody = document.querySelector('.show');
 
-contactNavBtn.addEventListener('click', () =>{
-    window.scrollTo({top: document.body.scrollHeight, behavior:'smooth'});
+contactNavBtn.addEventListener('click', () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 
 });
 
 // nav bar functionality
 buttons.forEach((button, index) => {
     const menuBody = menuBodies[index];
-    button.addEventListener('click', ()=>{
-        window.scrollTo({top: 0, behavior: 'smooth'});
-        if (currMenuBody != menuBody){
-            if(currMenuBody != null){
-                setTimeout(()=>{
+    button.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (currMenuBody != menuBody) {
+            if (currMenuBody != null) {
+                setTimeout(() => {
                     currMenuBody.classList.remove('show');
-                    setTimeout(()=>{
+                    setTimeout(() => {
                         menuBody.classList.add('show');
                         currMenuBody = menuBody;
- 
+
                     }, 350);
-                    
+
                 }, 350);
             } else {
-                setTimeout(()=>{
+                setTimeout(() => {
                     menuBody.classList.add('show');
                     currMenuBody = menuBody;
                 }, 350);
             }
 
-            
-        
+
+
         } else {
             currMenuBody.classList.remove('show');
             currMenuBody = null;
@@ -61,33 +59,31 @@ let currProj = null;
 projects.forEach((project, index) => {
     //onclick, switch focus
 
-    project.addEventListener('click', ()=>{
-        window.scrollTo({top:0, behavior: 'smooth'});
-        
-        
-        if(currProj ==null){
+    project.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+
+        if (currProj == null) {
             //first focus --> everything hide, one expand
             currProj = project;
-            projects.forEach((p, i)=>{
-                if(p != project){
+            projects.forEach((p, i) => {
+                if (p != project) {
                     //hide all not clicked
                     p.classList.add('hide');
                 }
             });
             project.classList.add('expand');
-            setTimeout(() => {
-                let slideshow = project.querySelector(".project-slideshow");
-                showSlides(0, slideshow);
-                slideshow.style.display = "flex";
-            }, 700);
+            let slideshow = project.querySelector(".project-slideshow");
+            showSlides(0, slideshow);
+            slideshow.style.display = "flex";
         }
-        else if(project == currProj){
+        else if (project == currProj) {
             //reset all
-            projects.forEach((p, i)=>{
+            projects.forEach((p, i) => {
                 p.querySelector(".project-slideshow").style.display = "none";
                 p.classList.remove('expand');
                 p.classList.remove('hide');
-                
+
             });
             currProj = null;
         } else {
@@ -98,15 +94,13 @@ projects.forEach((project, index) => {
             project.classList.remove('hide');
             project.classList.add('expand');
             currProj = project;
-            projects.forEach((p, i)=>{
+            projects.forEach((p, i) => {
                 p.querySelector(".project-slideshow").style.display = "none";
-                
+
             });
-            setTimeout(() => {
-                let slideshow = project.querySelector(".project-slideshow");
-                showSlides(0, slideshow);
-                slideshow.style.display = "flex";
-            }, 700);
+            let slideshow = project.querySelector(".project-slideshow");
+            showSlides(0, slideshow);
+            slideshow.style.display = "flex";
         }
     });
 });
@@ -115,33 +109,32 @@ projects.forEach((project, index) => {
 const slideMap = new Map();
 
 document.querySelectorAll("a.next").forEach(button => {
-   const parent = button.parentElement;
-   console.log(parent);
-   slideMap.set(parent, 0);
-   button.addEventListener("click", event => {
-    event.stopPropagation();
-    showSlides(slideMap.get(parent)+1, parent);
-   })
+    const parent = button.parentElement;
+    slideMap.set(parent, 0);
+    button.addEventListener("click", event => {
+        event.stopPropagation();
+        showSlides(slideMap.get(parent) + 1, parent);
+    })
 
 })
 
 document.querySelectorAll("a.prev").forEach(button => {
-   const parent = button.parentElement;
-   button.addEventListener("click", event => {
-    event.stopPropagation();
-    showSlides(slideMap.get(parent)-1, parent);
-   })
+    const parent = button.parentElement;
+    button.addEventListener("click", event => {
+        event.stopPropagation();
+        showSlides(slideMap.get(parent) - 1, parent);
+    })
 
 })
 
 function showSlides(n, slideshow) {
     let slides = slideshow.querySelectorAll(".slide");
-    let slideIndex = (slides.length+n) % slides.length;
+    let slideIndex = (slides.length + n) % slides.length;
 
     slides.forEach((slide, index) => {
-        slide.style.display="none";
+        slide.style.display = "none";
     });
-    slides[slideIndex].style.display="flex";
+    slides[slideIndex].style.display = "flex";
 
     slideMap.set(slideshow, slideIndex);
 }
