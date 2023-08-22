@@ -225,14 +225,20 @@ h1 {
 
 @keyframes fadeIn {
 	0% {opacity: 0}
-	50%{opacity: 0}
+	30%{opacity: 0}
 	100% {opacity: 1}
 }
 
-
-.hidden {
-	height: 0px;
+.project-text {
+	width: 75%;
+	margin: auto;
+	margin-top: 80px;
+	margin-bottom: 80px;
+	animation: fadeIn 3s;
+	display: none;
 }
+
+
 
 .slide img {
 	max-height: 100%;

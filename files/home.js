@@ -76,11 +76,13 @@ projects.forEach((project, index) => {
             let slideshow = project.querySelector(".project-slideshow");
             showSlides(0, slideshow);
             slideshow.style.display = "flex";
+            project.querySelector(".project-text").style.display = "block";
         }
         else if (project == currProj) {
             //reset all
             projects.forEach((p, i) => {
                 p.querySelector(".project-slideshow").style.display = "none";
+                p.querySelector(".project-text").style.display = "none";
                 p.classList.remove('expand');
                 p.classList.remove('hide');
 
@@ -96,11 +98,13 @@ projects.forEach((project, index) => {
             currProj = project;
             projects.forEach((p, i) => {
                 p.querySelector(".project-slideshow").style.display = "none";
+                p.querySelector(".project-text").style.display = "none";
 
             });
             let slideshow = project.querySelector(".project-slideshow");
             showSlides(0, slideshow);
             slideshow.style.display = "flex";
+            project.querySelector(".project-text").style.display = "block";
         }
     });
 });
