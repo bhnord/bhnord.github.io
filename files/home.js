@@ -75,14 +75,22 @@ projects.forEach((project, index) => {
             project.classList.add('expand');
             let slideshow = project.querySelector(".project-slideshow");
             showSlides(0, slideshow);
-            slideshow.style.display = "flex";
+            slideshow.style.display = "block";
             project.querySelector(".project-text").style.display = "block";
+            let subheader = project.querySelector(".project-subheader");
+            if (subheader) {
+                subheader.style.display = "block";
+            }
         }
         else if (project == currProj) {
             //reset all
             projects.forEach((p, i) => {
                 p.querySelector(".project-slideshow").style.display = "none";
                 p.querySelector(".project-text").style.display = "none";
+                let subheader = p.querySelector(".project-subheader");
+                if(subheader){
+                    subheader.style.display="none";
+                }
                 p.classList.remove('expand');
                 p.classList.remove('hide');
 
@@ -99,12 +107,21 @@ projects.forEach((project, index) => {
             projects.forEach((p, i) => {
                 p.querySelector(".project-slideshow").style.display = "none";
                 p.querySelector(".project-text").style.display = "none";
+                let subheader = p.querySelector(".project-subheader");
+                if (subheader) {
+                    subheader.style.display = "none";
+                }
+
 
             });
             let slideshow = project.querySelector(".project-slideshow");
             showSlides(0, slideshow);
-            slideshow.style.display = "flex";
+            slideshow.style.display = "block";
             project.querySelector(".project-text").style.display = "block";
+            let subheader = project.querySelector(".project-subheader");
+            if (subheader) {
+                subheader.style.display = "block";
+            }
         }
     });
 });
@@ -138,7 +155,7 @@ function showSlides(n, slideshow) {
     slides.forEach((slide, index) => {
         slide.style.display = "none";
     });
-    slides[slideIndex].style.display = "flex";
+    slides[slideIndex].style.display = "block";
 
     slideMap.set(slideshow, slideIndex);
 }

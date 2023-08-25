@@ -28,7 +28,7 @@ a {
 
 
 }
-	
+
 header {
 
 	padding-left: 45px;
@@ -74,7 +74,7 @@ button:hover {
 
 /* fill up hwole page and how to get scroll */
 body {
-	position:relative;
+	position: relative;
 	background-color: var(--background);
 	padding: 0;
 	font-family: 'Courier New', Courier, monospace;
@@ -95,7 +95,7 @@ body {
 	margin: 0;
 	font-family: 'Courier New', Courier, monospace;
 	font-weight: 700;
-	color:white;
+	color: white;
 	/* font-family: 'Rubik', sans-serif; */
 	transition: all 0.5s ease;
 }
@@ -133,10 +133,11 @@ h1 {
 }
 
 .menu-body {
-	width: 70%;  /*just for animation effect */
+	width: 70%;
+	/*just for animation effect */
 	height: 0px;
 	padding: 0;
-	margin: auto; 
+	margin: auto;
 	overflow: hidden;
 
 	border-radius: 20px;
@@ -176,8 +177,8 @@ h1 {
 	padding-bottom: 150px;
 }
 
-#projects-list{
-	position:relative;
+#projects-list {
+	position: relative;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -192,10 +193,11 @@ h1 {
 	margin-bottom: 50px;
 	font-size: 45px;
 }
+
 .project {
 	position: absolute;
 	border-radius: 20px;
-	left:50%;
+	left: 50%;
 	transform: translate(-50%, 0);
 	background-color: var(--background);
 	height: 60px;
@@ -204,8 +206,8 @@ h1 {
 	width: 80vw;
 	text-align: center;
 	vertical-align: middle;
-	display:table;
-	margin:auto;
+	display: table;
+	margin: auto;
 	transition: all 0.7s ease;
 
 	border-style: solid;
@@ -215,65 +217,81 @@ h1 {
 
 .project-slideshow {
 	width: 60%;
-	aspect-ratio: 2/1;	
+	aspect-ratio: 2/1;
 	position: relative;
 	margin: auto;
 	display: flex;
-	
+	padding: 30px 50px 30px 50px;
+	border-radius: 20px;
+	/* background-color: rgb(197, 197, 197); */
 	animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
-	0% {opacity: 0}
-	30%{opacity: 0}
-	100% {opacity: 1}
+	0% {
+		opacity: 0
+	}
+
+	30% {
+		opacity: 0
+	}
+
+	100% {
+		opacity: 1
+	}
 }
 
 .project-text {
 	width: 75%;
 	margin: auto;
-	margin-top: 80px;
-	margin-bottom: 80px;
+	padding: 20px 0px 60px 0px;
 	animation: fadeIn 3s;
 	display: none;
 }
 
+.project-subheader {
+	display: none;
+	animation: fadeIn 1.5s;
+}
 
 
 .slide img {
+	height: 100%;
+	width: 100%;
 	max-height: 100%;
 	max-width: 100%;
-	width: 100%;
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .slide {
 	max-height: 100%;
 	max-width: 100%;
 	display: none;
-	position: relative;	
+	position: relative;
 	width: 100%;
 	height: 100%;
 	margin: auto;
 }
 
 .numbering {
-	position: absolute;
+	/* position: absolute; */
 	padding: 8px 12px;
 	top: 0;
+	display: none;
 }
 
-.prev, .next {
+.prev,
+.next {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
 	width: auto;
 	margin-top: -22px;
 	padding: 16px;
-	color: white;
+	color: black;
 	transition: 0.6s ease;
-	user-select: none;	
-	pointer-events:all;
+	user-select: none;
+	pointer-events: all;
 }
 
 .next {
@@ -284,13 +302,15 @@ h1 {
 	left: 0;
 }
 
-.prev:hover, .next:hover {
-	background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
 
 }
 
 .project.hide {
-	left:0;
+	left: 0;
 	width: 55px;
 	transform: translate(0%, 0);
 }
@@ -303,13 +323,15 @@ h1 {
 }
 
 .p2 {
-	top:100px;
+	top: 100px;
 }
+
 .p3 {
-	top:200px;
+	top: 200px;
 }
+
 .p4 {
-	top:300px;
+	top: 300px;
 }
 
 /* .flex {
@@ -324,7 +346,7 @@ h1 {
 	height: 20vw;
 }
 
-.menu-body img {
+#about-body img {
 	flex: 1 1 auto;
 	min-height: 0;
 	height: 100%;
@@ -385,18 +407,19 @@ h1 {
 	width: 0px;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
 	header {
 		width: 90vw;
 		margin: auto;
 		display: flex;
 		justify-content: space-between;
 		padding: 0px;
-    left: 0;
-    right: 0;
+		left: 0;
+		right: 0;
 	}
+
 	.head-btn {
-		font-size:3vw;
+		font-size: 3vw;
 		margin: 20px, auto, auto, auto;
 		padding: 0px;
 	}
