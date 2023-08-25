@@ -346,7 +346,7 @@ h1 {
 	height: 20vw;
 }
 
-#about-body img {
+#about-body img, #resume-body img {
 	flex: 1 1 auto;
 	min-height: 0;
 	height: 100%;
