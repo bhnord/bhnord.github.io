@@ -37,10 +37,7 @@ buttons.forEach((button, index) => {
 
 
 
-        } else {
-            currMenuBody.classList.remove('show');
-            currMenuBody = null;
-        }
+        } 
 
 
         //reset projects
