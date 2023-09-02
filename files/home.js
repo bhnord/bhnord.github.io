@@ -74,8 +74,12 @@ projects.forEach((project, index) => {
             });
             project.classList.add('expand');
             let slideshow = project.querySelector(".project-slideshow");
-            showSlides(0, slideshow);
-            slideshow.style.display = "block";
+            if (slideshow){
+                showSlides(0, slideshow);
+                slideshow.style.display = "block";
+            }
+
+
             project.querySelector(".project-text").style.display = "block";
             let subheader = project.querySelector(".project-subheader");
             if (subheader) {
@@ -85,7 +89,10 @@ projects.forEach((project, index) => {
         else if (project == currProj) {
             //reset all
             projects.forEach((p, i) => {
-                p.querySelector(".project-slideshow").style.display = "none";
+                let slideshow = p.querySelector(".project-slideshow")
+                if(slideshow){
+                    slideshow.style.display = "none";
+                }
                 p.querySelector(".project-text").style.display = "none";
                 let subheader = p.querySelector(".project-subheader");
                 if(subheader){
@@ -105,7 +112,10 @@ projects.forEach((project, index) => {
             project.classList.add('expand');
             currProj = project;
             projects.forEach((p, i) => {
-                p.querySelector(".project-slideshow").style.display = "none";
+                let slideshow = p.querySelector(".project-slideshow")
+                if(slideshow){
+                    slideshow.style.display = "none";
+                }
                 p.querySelector(".project-text").style.display = "none";
                 let subheader = p.querySelector(".project-subheader");
                 if (subheader) {
@@ -115,8 +125,10 @@ projects.forEach((project, index) => {
 
             });
             let slideshow = project.querySelector(".project-slideshow");
-            showSlides(0, slideshow);
-            slideshow.style.display = "block";
+            if(slideshow){
+                showSlides(0, slideshow);
+                slideshow.style.display = "block";
+            }
             project.querySelector(".project-text").style.display = "block";
             let subheader = project.querySelector(".project-subheader");
             if (subheader) {
