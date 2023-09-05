@@ -67,6 +67,9 @@ projects.forEach((project, index) => {
                 if (p != project) {
                     //hide all not clicked
                     p.classList.add('hide');
+                    p.querySelector(".title-shown").style.display="none";
+                    p.querySelector(".title-hidden").style.display="block";
+                    
                 }
             });
             project.classList.add('expand');
@@ -98,6 +101,8 @@ projects.forEach((project, index) => {
                 p.classList.remove('expand');
                 p.classList.remove('hide');
 
+                p.querySelector(".title-shown").style.display="block";
+                p.querySelector(".title-hidden").style.display="none";
             });
             currProj = null;
         } else {
@@ -109,7 +114,7 @@ projects.forEach((project, index) => {
             project.classList.add('expand');
             currProj = project;
             projects.forEach((p, i) => {
-                let slideshow = p.querySelector(".project-slideshow")
+                let slideshow = p.querySelector(".project-slideshow");
                 if(slideshow){
                     slideshow.style.display = "none";
                 }
@@ -118,6 +123,10 @@ projects.forEach((project, index) => {
                 if (subheader) {
                     subheader.style.display = "none";
                 }
+                p.querySelector(".title-hidden").style.display="block";
+                p.querySelector(".title-shown").style.display="none";
+                
+
 
 
             });
@@ -131,6 +140,8 @@ projects.forEach((project, index) => {
             if (subheader) {
                 subheader.style.display = "block";
             }
+            project.querySelector(".title-shown").style.display="block";
+            project.querySelector(".title-hidden").style.display="none";
         }
     });
 });
