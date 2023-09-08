@@ -4,7 +4,8 @@ const menuBodies = document.querySelectorAll('.menu-body');
 const contactNavBtn = document.querySelector('#contact-btn');
 const contactBtns = document.querySelectorAll('.card');
 const contactText = document.querySelector('#contact-text');
-
+const projectText = document.querySelectorAll('.project-text');
+const links = document.querySelectorAll('a');
 let currMenuBody = document.querySelector('.show');
 
 contactNavBtn.addEventListener('click', () => {
@@ -179,3 +180,17 @@ function showSlides(n, slideshow) {
 
     slideMap.set(slideshow, slideIndex);
 }
+
+
+// stops active project from closing when clicking on description or link
+projectText.forEach((text, index) => {
+   text.addEventListener('click', (event) => {
+    event.stopPropagation();
+   }) 
+})
+
+links.forEach((link, index) =>{
+    link.addEventListener('click', (event) =>{
+        event.stopPropagation();
+    })
+})
