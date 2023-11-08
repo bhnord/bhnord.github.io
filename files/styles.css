@@ -26,10 +26,6 @@ span {
 	/* text-transform: uppercase; */
 }
 a {
-	/* color: red;
-	color: #1c49c2;
-	color: #007cba;
-	color: black; */
 	font-weight: 700;
 	text-decoration: none;
 
@@ -42,9 +38,12 @@ header {
 	background-color: var(--backgroundt);
 	min-height: 30px;
 	justify-content: left;
-	border-radius: 60px;
+	/* border-radius: 60px; */
 	position: fixed;
 	z-index: 2;
+	border-bottom: solid;
+	border-width: 1px;
+	width: 100%;
 
 }
 
@@ -58,12 +57,20 @@ button {
 	background-color: transparent;
 	position: relative;
 	justify-content: center;
-	margin: 1em;
+	padding: 1em;
+	padding-bottom: 0.1em;
+	padding-top: 0.1em;
 	font-family: "Rubik", sans-serif;
 	font-size: 20px;
 	font-weight: 400;
 	color: var(--background);
 
+}
+
+.selected-nav {
+	border-bottom: solid;
+	border-width: 2px;
+	color: black;
 }
 
 
@@ -74,7 +81,7 @@ button img {
 	max-height: 20vw;
 }
 
-button:hover {
+h4:hover {
 	transform: scale(1.25);
 	cursor: pointer;
 }
@@ -416,8 +423,8 @@ h1 {
 
 @media screen and (max-width: 700px) {
 	header {
-		width: 90vw;
-		margin: auto;
+		width: 100vw;
+		/* margin: auto; */
 		display: flex;
 		justify-content: space-between;
 		padding: 0px;
@@ -427,7 +434,7 @@ h1 {
 
 	.head-btn {
 		font-size: 3vw;
-		margin: 20px, auto, auto, auto;
-		padding: 0px;
+		padding: 20px, auto, auto, auto;
+		/* padding: 0px; */
 	}
 }

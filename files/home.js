@@ -7,6 +7,7 @@ const contactText = document.querySelector('#contact-text');
 const projectText = document.querySelectorAll('.project-text');
 const links = document.querySelectorAll('a');
 let currMenuBody = document.querySelector('.show');
+let currNavButton = document.querySelector('.selected-nav');
 
 contactNavBtn.addEventListener('click', () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
@@ -16,14 +17,18 @@ contactNavBtn.addEventListener('click', () => {
 // nav bar functionality
 buttons.forEach((button, index) => {
     const menuBody = menuBodies[index];
+    const navButton = buttons[index];
     button.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (currMenuBody != menuBody) {
             if (currMenuBody != null) {
                 setTimeout(() => {
                     currMenuBody.classList.remove('show');
+                    currNavButton.classList.remove('selected-nav');
                     setTimeout(() => {
                         menuBody.classList.add('show');
+                        navButton.classList.add('selected-nav');
+                        currNavButton = navButton
                         currMenuBody = menuBody;
 
                     }, 350);
@@ -31,7 +36,9 @@ buttons.forEach((button, index) => {
                 }, 350);
             } else {
                 setTimeout(() => {
+                    navButton.classList.add('selected-nav');
                     menuBody.classList.add('show');
+                    currNavButton = navButton;
                     currMenuBody = menuBody;
                 }, 350);
             }
